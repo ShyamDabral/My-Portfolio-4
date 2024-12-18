@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shyam Dabral - Futuristic Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;700&display=swap');
+        
+        :root {
+            --bg-primary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --accent-color: #00ff00;
+        }
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            cursor: none;
+        }
+
+        /* Click effect styles */
+        #click-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .click-char {
+            position: absolute;
+            color: #00ff00;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+            font-size: 20px;
+            opacity: 1;
+            transition: all 1s ease-out;
+        }
+
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease-out;
+        }
+        .custom-cursor.expand {
+            transform: translate(-50%, -50%) scale(3);
+            background-color: rgba(0, 255, 255, 0.2);
+        }
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .tech-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+            transition: all 0.3s ease;
+            perspective: 1000px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tech-card:hover {
+            transform: rotateX(10deg) rotateY(10deg);
+            box-shadow: 0 10px 20px rgba(0, 255, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+        .tech-card .icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        .tech-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .tech-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .glitch-text {
+            position: relative;
+            text-shadow: 
+                2px 2px 0 #00ffff,
+                -2px -2px 0 #ff00ff;
+            animation: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="custom-cursor" class="custom-cursor"></div>
+    <div id="click-container"></div>
+
+    <header class="text-center mb-16 bg-opacity-10 p-8">
+        <h1 class="text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+            Shyam Dabral
+        </h1>
+        <p class="text-2xl font-mono text-green-300 mb-2">
+            AI/ML Researcher | Future Innovator
+        </p>
+        <div class="flex justify-center space-x-4 mt-6">
+            <a href="mailto:shyamdabral1@gmail.com" class="text-cyan-300 hover:text-cyan-100 transition-colors">
+                shyamdabral1@gmail.com
+            </a>
+            <a href="tel:9625172523" class="text-cyan-300 hover:text-cyan-100 transition-colors">
+                9625172523
+            </a>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <section class="mb-16">
+            <h2 class="section-title text-3xl mb-8 text-center">Professional Profile</h2>
+            <p class="text-lg text-center text-gray-700 mb-4">
+                I am an AI/ML researcher dedicated to developing innovative technological solutions that bridge critical gaps in human-machine interaction. With extensive expertise in advanced technologies such as Deep Learning, Computer Vision, and Natural Language Processing, I am committed to pushing the boundaries of artificial intelligence to create meaningful, impactful systems.
+            </p>
+            <p class="text-lg text-center text-gray-700">
+                My professional approach centers on designing intelligent, scalable solutions that address complex technological challenges. I continuously explore emerging technologies and engage in projects that challenge conventional thinking and drive technological innovation forward.
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="section-title text-3xl mb-8 text-center">Technical Expertise</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="tech-card p-6 rounded-lg text-center">
+                    <div class="icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>
+                        Specialized in leveraging Python for advanced machine learning model development, comprehensive data analysis, and efficient scripting. Proficient with industry-standard libraries including TensorFlow, PyTorch, and Pandas.
+                    </p>
+                </div>
+                <div class="tech-card p-6 rounded-lg text-center">
+                    <div class="icon">🖥️</div>
+                    <h3>C/C++</h3>
+                    <p>
+                        Expert in system-level programming, focusing on high-performance software development, algorithmic optimization, and low-level hardware interaction, particularly in AI model performance enhancement.
+                    </p>
+                </div>
+                <div class="tech-card p-6 rounded-lg text-center">
+                    <div class="icon">🌐</div>
+                    <h3>Java</h3>
+                    <p>
+                        Specialized in developing robust backend systems and scalable, multi-threaded applications. Experienced in creating distributed architectures for complex AI research and enterprise solutions.
+                    </p>
+                </div>
+                <div class="tech-card p-6 rounded-lg text-center">
+                    <div class="icon">🔹</div>
+                    <h3>HTML</h3>
+                    <p>
+                        Advanced proficiency in creating semantic, accessible, and responsive web structures. Committed to developing web architectures that meet contemporary standards of design and functionality.
+                    </p>
+                </div>
+                <div class="tech-card p-6 rounded-lg text-center">
+                    <div class="icon">🔸</div>
+                    <h3>CSS</h3>
+                    <p>
+                        Expertise in crafting sophisticated, responsive designs using advanced CSS techniques. Skilled in implementing complex layouts, animations, and interactive interface elements.
+                    </p>
+                </div>
+                <div class="tech-card p-6 rounded-lg text-center">
+                    <div class="icon">💻</div>
+                    <h3>JavaScript</h3>
+                    <p>
+                        Advanced implementation of dynamic web application development, specializing in complex DOM manipulation, asynchronous programming, and creating high-performance interactive experiences.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="section-title text-3xl mb-8 text-center">Research Focus</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="tech-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-green-300 mb-4">Computer Vision</h3>
+                    <p class="text-cyan-100">
+                        Advancing image recognition through innovative deep learning architectures and groundbreaking neural network methodologies to transform visual data interpretation.
+                    </p>
+                </div>
+                <div class="tech-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-green-300 mb-4">Natural Language Processing</h3>
+                    <p class="text-cyan-100">
+                        Developing sophisticated language models that revolutionize communication technologies and create more intuitive human-AI interaction paradigms.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center mt-16">
+            <h2 class="section-title text-3xl mb-8">Professional Consultation</h2>
+            <p class="text-lg text-gray-700 mb-4">
+                Interested in collaborative opportunities, research initiatives, or technological consultations? Complete the form below to initiate a professional dialogue. I am consistently seeking innovative projects and strategic partnerships.
+            </p>
+            <form action="your_form_processing_script.php" method="POST" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Your Name</label>
+                    <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Your Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700">Your Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full p-2 border border-gray-300 rounded" required></textarea>
+                </div>
+                <button type="submit" class="bg-green-500 text-white py-2 px-6 rounded-lg hover:bg-green-400 transition-colors">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('custom-cursor');
+        const clickContainer = document.getElementById('click-container');
+        const characters = '01';
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        // Cursor Expand on Hover
+        const hoverElements = document.querySelectorAll('a, .tech-card, button');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('expand');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('expand');
+            });
+        });
+
+        // Click effect
+        function createClickEffect(x, y) {
+            // Clear previous click effects
+            clickContainer.innerHTML = '';
+
+            // Create an omnidirectional spread
+            const numChars = 20; // Number of characters
+            const spreadRadius = 250; // Spread radius
+
+            for (let i = 0; i < numChars; i++) {
+                const clickChar = document.createElement('div');
+                clickChar.classList.add('click-char');
+                clickChar.textContent = characters[Math.floor(Math.random() * characters.length)];
+                
+                // Generate random angle for full 360-degree spread
+                const angle = Math.random() * 2 * Math.PI;
+                const distance = Math.random() * spreadRadius;
+
+                // Calculate target position
+                const targetX = x + Math.cos(angle) * distance;
+                const targetY = y + Math.sin(angle) * distance;
+
+                // Initial positioning
+                clickChar.style.left = `${x}px`;
+                clickChar.style.top = `${y}px`;
+                clickChar.style.position = 'absolute';
+                clickChar.style.transition = 'all 2s cubic-bezier(0.25, 0.1, 0.25, 1)';
+
+                clickContainer.appendChild(clickChar);
+
+                // Trigger reflow to ensure transition works
+                clickChar.offsetHeight;
+
+                // Move and fade out
+                clickChar.style.left = `${targetX}px`;
+                clickChar.style.top = `${targetY}px`;
+                clickChar.style.opacity = '0';
+
+                // Remove character after animation
+                setTimeout(() => {
+                    clickContainer.removeChild(clickChar);
+                }, 2000);
+            }
+        }
+
+        // Add click event listener to the document
+        document.addEventListener('click', (e) => {
+            createClickEffect(e.clientX, e.clientY);
+        });
+    </script>
+</body>
+</html>
